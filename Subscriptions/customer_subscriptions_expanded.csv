@@ -1,0 +1,201 @@
+﻿CustomerID,SubscriptionID,ServiceType,SubscriptionDate,SubscriptionStatus,MonthlyFee
+8,S0001,Grammarly - Writing assistant tool.,2012-10-08,Active,$66.39
+7,S0002,MyFitnessPal - Diet and exercise tracking app.,2021-06-24,Cancelled,$77.59
+26,S0003,Microsoft Office 365 - Subscription for office productivity tools.,2020-05-24,Pending,$74.86
+10,S0004,Noom - Weight loss and health coaching.,2013-07-28,Cancelled,$42.62
+22,S0005,The Washington Post - Digital subscription for news articles.,2018-06-21,Active,$39.46
+38,S0006,The New York Times - Digital subscription for news articles.,2015-03-04,Cancelled,$49.82
+17,S0007,Skillshare - Online learning community with classes on creative and entrepreneurial skills.,2019-04-08,Inactive,$87.10
+32,S0008,"Disney+ - Streaming service for Disney, Pixar, Marvel, Star Wars, and National Geographic content.",2021-02-10,Pending,$16.04
+12,S0009,"Hulu - Streaming service for TV shows, movies, and live TV.",2013-09-06,Active,$50.13
+31,S0010,The New York Times - Digital subscription for news articles.,2017-03-10,Active,$23.68
+31,S0011,Spotify - Music streaming service.,2010-10-13,Inactive,$55.08
+16,S0012,Kindle Unlimited - Subscription for unlimited access to books on Amazon.,2015-08-14,Active,$25.72
+13,S0013,New Yorker - Digital and print subscriptions for long-form journalism and fiction.,2014-09-01,Inactive,$14.60
+28,S0014,Udemy - Online courses on various topics.,2022-07-18,Inactive,$98.43
+26,S0015,Audible - Audiobook subscription service.,2017-11-23,Active,$32.36
+21,S0016,Netflix - Streaming service for movies and TV shows.,2018-06-12,Pending,$20.44
+10,S0017,The Wall Street Journal - Digital subscription for business and financial news.,2010-11-09,Cancelled,$27.31
+7,S0018,Udemy - Online courses on various topics.,2021-11-06,Pending,$47.78
+20,S0019,"Adobe Creative Cloud - Subscription for creative software like Photoshop, Illustrator, and Premiere Pro.",2020-05-11,Pending,$85.25
+28,S0020,Kindle Unlimited - Subscription for unlimited access to books on Amazon.,2016-03-03,Active,$98.23
+17,S0021,Spotify - Music streaming service.,2019-01-14,Cancelled,$88.96
+32,S0022,Evernote - Note-taking and organization app.,2010-01-26,Pending,$71.17
+12,S0023,TIME Magazine - Digital and print subscriptions for news and current events.,2010-06-19,Pending,$40.90
+31,S0024,"Scribd - Subscription for books, audiobooks, and documents.",2023-01-09,Pending,$17.31
+32,S0025,The New York Times - Digital subscription for news articles.,2023-09-27,Active,$34.88
+23,S0026,Dropbox - Cloud storage service.,2011-12-16,Inactive,$74.16
+20,S0027,"Disney+ - Streaming service for Disney, Pixar, Marvel, Star Wars, and National Geographic content.",2014-10-19,Pending,$37.97
+11,S0028,Noom - Weight loss and health coaching.,2013-04-02,Pending,$60.81
+38,S0029,Noom - Weight loss and health coaching.,2017-06-08,Pending,$41.62
+32,S0030,The New York Times - Digital subscription for news articles.,2014-07-16,Cancelled,$89.48
+7,S0031,Coursera - Online courses and degrees from universities.,2013-09-14,Pending,$51.63
+35,S0032,TIME Magazine - Digital and print subscriptions for news and current events.,2018-06-11,Cancelled,$18.27
+13,S0033,"Adobe Creative Cloud - Subscription for creative software like Photoshop, Illustrator, and Premiere Pro.",2023-08-09,Pending,$21.21
+20,S0034,LinkedIn Learning - Professional development and skill-building courses.,2022-11-23,Cancelled,$92.17
+18,S0035,LinkedIn Learning - Professional development and skill-building courses.,2021-08-22,Inactive,$65.63
+10,S0036,Noom - Weight loss and health coaching.,2022-08-13,Pending,$69.09
+5,S0037,MyFitnessPal - Diet and exercise tracking app.,2018-05-04,Inactive,$74.78
+27,S0038,Microsoft Office 365 - Subscription for office productivity tools.,2018-06-16,Cancelled,$16.10
+33,S0039,Coursera - Online courses and degrees from universities.,2023-07-03,Inactive,$22.84
+11,S0040,LinkedIn Learning - Professional development and skill-building courses.,2010-03-15,Active,$63.48
+3,S0041,The Wall Street Journal - Digital subscription for business and financial news.,2018-10-04,Pending,$31.57
+7,S0042,Evernote - Note-taking and organization app.,2012-07-25,Inactive,$73.98
+28,S0043,Evernote - Note-taking and organization app.,2011-08-01,Active,$71.72
+10,S0044,Noom - Weight loss and health coaching.,2014-01-28,Pending,$32.38
+37,S0045,Skillshare - Online learning community with classes on creative and entrepreneurial skills.,2018-08-23,Pending,$15.00
+14,S0046,The Wall Street Journal - Digital subscription for business and financial news.,2016-11-17,Inactive,$28.39
+2,S0047,Amazon Prime Video - Streaming service for movies and TV shows included with Amazon Prime.,2011-03-04,Pending,$84.02
+21,S0048,ComiXology Unlimited - Digital comic book subscription.,2014-04-19,Pending,$92.62
+4,S0049,Dropbox - Cloud storage service.,2021-08-25,Pending,$95.42
+2,S0050,Kindle Unlimited - Subscription for unlimited access to books on Amazon.,2020-01-09,Pending,$31.77
+3,S0051,MasterClass - Online classes taught by experts in various fields.,2011-10-14,Cancelled,$23.04
+24,S0052,The New York Times - Digital subscription for news articles.,2018-09-18,Pending,$57.61
+31,S0053,Spotify - Music streaming service.,2016-05-07,Pending,$63.11
+8,S0054,"Hulu - Streaming service for TV shows, movies, and live TV.",2021-07-23,Active,$59.59
+40,S0055,Noom - Weight loss and health coaching.,2015-11-19,Active,$79.13
+10,S0056,"Adobe Creative Cloud - Subscription for creative software like Photoshop, Illustrator, and Premiere Pro.",2020-12-10,Pending,$79.14
+12,S0057,MasterClass - Online classes taught by experts in various fields.,2022-12-14,Pending,$83.50
+37,S0058,Microsoft Office 365 - Subscription for office productivity tools.,2012-04-17,Cancelled,$66.04
+8,S0059,Peloton - Fitness classes and workout plans.,2015-11-17,Inactive,$39.69
+33,S0060,TIME Magazine - Digital and print subscriptions for news and current events.,2015-05-26,Inactive,$99.47
+17,S0061,National Geographic - Digital and print subscriptions for science and nature content.,2018-09-24,Inactive,$17.20
+18,S0062,Coursera - Online courses and degrees from universities.,2011-09-25,Inactive,$36.94
+5,S0063,Peloton - Fitness classes and workout plans.,2011-10-04,Cancelled,$35.10
+5,S0064,National Geographic - Digital and print subscriptions for science and nature content.,2011-09-24,Active,$79.38
+37,S0065,"Scribd - Subscription for books, audiobooks, and documents.",2021-07-11,Inactive,$63.54
+37,S0066,Kindle Unlimited - Subscription for unlimited access to books on Amazon.,2019-05-05,Inactive,$77.84
+24,S0067,Udemy - Online courses on various topics.,2021-10-16,Pending,$53.25
+37,S0068,National Geographic - Digital and print subscriptions for science and nature content.,2022-07-24,Pending,$16.85
+37,S0069,Microsoft Office 365 - Subscription for office productivity tools.,2017-12-21,Inactive,$18.77
+11,S0070,Headspace - Meditation and mindfulness app.,2018-08-02,Pending,$82.46
+29,S0071,"Scribd - Subscription for books, audiobooks, and documents.",2020-05-05,Cancelled,$57.31
+25,S0072,Spotify - Music streaming service.,2014-04-06,Active,$19.65
+1,S0073,National Geographic - Digital and print subscriptions for science and nature content.,2022-05-03,Inactive,$17.70
+32,S0074,National Geographic - Digital and print subscriptions for science and nature content.,2018-02-18,Inactive,$24.60
+39,S0075,Dropbox - Cloud storage service.,2013-02-11,Active,$28.53
+33,S0076,Noom - Weight loss and health coaching.,2010-03-26,Active,$54.56
+31,S0077,Calm - Meditation and sleep app.,2015-05-05,Inactive,$77.15
+24,S0078,The New York Times - Digital subscription for news articles.,2023-01-15,Cancelled,$35.43
+13,S0079,Headspace - Meditation and mindfulness app.,2016-05-14,Active,$73.37
+35,S0080,Headspace - Meditation and mindfulness app.,2021-09-16,Active,$42.05
+25,S0081,Skillshare - Online learning community with classes on creative and entrepreneurial skills.,2016-04-16,Active,$19.29
+39,S0082,TIME Magazine - Digital and print subscriptions for news and current events.,2012-12-17,Inactive,$89.81
+40,S0083,"Scribd - Subscription for books, audiobooks, and documents.",2019-12-25,Active,$97.36
+20,S0084,New Yorker - Digital and print subscriptions for long-form journalism and fiction.,2012-03-17,Inactive,$73.78
+8,S0085,Spotify - Music streaming service.,2011-05-21,Inactive,$67.05
+30,S0086,LinkedIn Learning - Professional development and skill-building courses.,2017-06-08,Pending,$62.41
+37,S0087,Netflix - Streaming service for movies and TV shows.,2010-05-13,Active,$31.35
+25,S0088,Dropbox - Cloud storage service.,2020-09-14,Active,$99.05
+2,S0089,Microsoft Office 365 - Subscription for office productivity tools.,2016-08-02,Cancelled,$35.87
+3,S0090,The New York Times - Digital subscription for news articles.,2014-10-15,Inactive,$16.76
+28,S0091,Spotify - Music streaming service.,2010-09-15,Inactive,$16.84
+19,S0092,Grammarly - Writing assistant tool.,2018-02-14,Inactive,$34.55
+34,S0093,Microsoft Office 365 - Subscription for office productivity tools.,2019-11-26,Active,$34.09
+2,S0094,The Wall Street Journal - Digital subscription for business and financial news.,2022-08-11,Active,$49.50
+26,S0095,Udemy - Online courses on various topics.,2013-03-16,Pending,$68.94
+4,S0096,Headspace - Meditation and mindfulness app.,2013-08-14,Inactive,$60.48
+7,S0097,Microsoft Office 365 - Subscription for office productivity tools.,2015-08-03,Pending,$91.06
+37,S0098,MasterClass - Online classes taught by experts in various fields.,2017-08-23,Cancelled,$87.06
+38,S0099,"Hulu - Streaming service for TV shows, movies, and live TV.",2014-07-09,Pending,$94.68
+18,S0100,"Disney+ - Streaming service for Disney, Pixar, Marvel, Star Wars, and National Geographic content.",2015-11-03,Inactive,$52.17
+10,S0101,Grammarly - Writing assistant tool.,2015-05-14,Inactive,$95.83
+22,S0102,The Washington Post - Digital subscription for news articles.,2022-04-25,Pending,$19.16
+29,S0103,"Scribd - Subscription for books, audiobooks, and documents.",2019-05-17,Cancelled,$46.55
+16,S0104,"Hulu - Streaming service for TV shows, movies, and live TV.",2017-05-07,Pending,$94.55
+6,S0105,MyFitnessPal - Diet and exercise tracking app.,2014-12-23,Pending,$18.21
+35,S0106,The Washington Post - Digital subscription for news articles.,2013-07-03,Inactive,$79.01
+35,S0107,The Washington Post - Digital subscription for news articles.,2010-10-20,Active,$76.49
+29,S0108,Grammarly - Writing assistant tool.,2015-02-28,Pending,$20.77
+23,S0109,Amazon Prime Video - Streaming service for movies and TV shows included with Amazon Prime.,2016-11-06,Pending,$44.20
+38,S0110,The Wall Street Journal - Digital subscription for business and financial news.,2010-09-06,Inactive,$53.22
+8,S0111,"Disney+ - Streaming service for Disney, Pixar, Marvel, Star Wars, and National Geographic content.",2021-06-04,Active,$81.77
+29,S0112,The Washington Post - Digital subscription for news articles.,2015-11-21,Active,$84.69
+5,S0113,The New York Times - Digital subscription for news articles.,2016-10-14,Pending,$90.76
+40,S0114,"Scribd - Subscription for books, audiobooks, and documents.",2015-10-23,Inactive,$60.52
+34,S0115,Spotify - Music streaming service.,2014-04-12,Pending,$67.25
+16,S0116,Peloton - Fitness classes and workout plans.,2023-02-19,Active,$45.32
+18,S0117,ComiXology Unlimited - Digital comic book subscription.,2013-01-21,Pending,$46.00
+36,S0118,Microsoft Office 365 - Subscription for office productivity tools.,2018-12-19,Pending,$32.66
+22,S0119,"Scribd - Subscription for books, audiobooks, and documents.",2017-12-11,Cancelled,$13.40
+5,S0120,MyFitnessPal - Diet and exercise tracking app.,2019-01-12,Active,$89.41
+15,S0121,ComiXology Unlimited - Digital comic book subscription.,2023-01-09,Active,$52.31
+3,S0122,Kindle Unlimited - Subscription for unlimited access to books on Amazon.,2022-02-09,Pending,$90.86
+1,S0123,MyFitnessPal - Diet and exercise tracking app.,2023-10-03,Inactive,$56.36
+7,S0124,Peloton - Fitness classes and workout plans.,2019-04-18,Pending,$53.79
+4,S0125,Grammarly - Writing assistant tool.,2012-01-17,Inactive,$89.77
+18,S0126,Peloton - Fitness classes and workout plans.,2018-08-18,Active,$61.18
+34,S0127,Calm - Meditation and sleep app.,2014-04-08,Inactive,$39.14
+1,S0128,Grammarly - Writing assistant tool.,2013-10-20,Pending,$51.70
+30,S0129,Coursera - Online courses and degrees from universities.,2014-08-04,Pending,$62.53
+30,S0130,Dropbox - Cloud storage service.,2023-10-08,Pending,$13.30
+39,S0131,TIME Magazine - Digital and print subscriptions for news and current events.,2014-08-03,Cancelled,$26.45
+15,S0132,Spotify - Music streaming service.,2020-08-06,Active,$30.39
+31,S0133,"Hulu - Streaming service for TV shows, movies, and live TV.",2017-11-20,Inactive,$46.47
+18,S0134,Evernote - Note-taking and organization app.,2015-07-20,Cancelled,$21.39
+1,S0135,MasterClass - Online classes taught by experts in various fields.,2023-06-19,Active,$76.41
+22,S0136,Kindle Unlimited - Subscription for unlimited access to books on Amazon.,2023-05-23,Active,$47.36
+22,S0137,Dropbox - Cloud storage service.,2013-04-02,Active,$20.25
+40,S0138,Amazon Prime Video - Streaming service for movies and TV shows included with Amazon Prime.,2014-08-17,Inactive,$95.81
+7,S0139,LinkedIn Learning - Professional development and skill-building courses.,2018-02-17,Pending,$27.46
+6,S0140,Amazon Prime Video - Streaming service for movies and TV shows included with Amazon Prime.,2011-06-27,Inactive,$48.81
+13,S0141,"Disney+ - Streaming service for Disney, Pixar, Marvel, Star Wars, and National Geographic content.",2022-09-08,Pending,$56.06
+25,S0142,The Washington Post - Digital subscription for news articles.,2023-01-27,Cancelled,$28.73
+10,S0143,National Geographic - Digital and print subscriptions for science and nature content.,2020-10-14,Inactive,$85.02
+18,S0144,National Geographic - Digital and print subscriptions for science and nature content.,2017-11-14,Inactive,$33.27
+22,S0145,Kindle Unlimited - Subscription for unlimited access to books on Amazon.,2011-05-10,Cancelled,$71.27
+20,S0146,Kindle Unlimited - Subscription for unlimited access to books on Amazon.,2014-12-19,Active,$29.24
+7,S0147,Amazon Prime Video - Streaming service for movies and TV shows included with Amazon Prime.,2023-06-09,Active,$40.23
+18,S0148,Noom - Weight loss and health coaching.,2022-09-06,Active,$92.80
+20,S0149,"Scribd - Subscription for books, audiobooks, and documents.",2011-05-13,Pending,$75.95
+18,S0150,Grammarly - Writing assistant tool.,2022-06-24,Active,$26.45
+36,S0151,National Geographic - Digital and print subscriptions for science and nature content.,2017-05-22,Cancelled,$52.32
+16,S0152,TIME Magazine - Digital and print subscriptions for news and current events.,2016-01-08,Inactive,$84.77
+26,S0153,Dropbox - Cloud storage service.,2018-09-26,Cancelled,$32.18
+33,S0154,Netflix - Streaming service for movies and TV shows.,2014-12-11,Pending,$93.82
+23,S0155,Netflix - Streaming service for movies and TV shows.,2019-01-24,Pending,$99.91
+32,S0156,"Hulu - Streaming service for TV shows, movies, and live TV.",2010-05-22,Active,$20.67
+29,S0157,Audible - Audiobook subscription service.,2013-09-26,Cancelled,$73.17
+12,S0158,Coursera - Online courses and degrees from universities.,2022-02-02,Inactive,$91.72
+20,S0159,Grammarly - Writing assistant tool.,2014-07-28,Cancelled,$76.18
+15,S0160,Amazon Prime Video - Streaming service for movies and TV shows included with Amazon Prime.,2016-08-11,Inactive,$18.65
+27,S0161,Skillshare - Online learning community with classes on creative and entrepreneurial skills.,2016-08-01,Inactive,$39.51
+20,S0162,Calm - Meditation and sleep app.,2020-06-25,Cancelled,$82.85
+31,S0163,Evernote - Note-taking and organization app.,2013-09-20,Active,$93.06
+18,S0164,Kindle Unlimited - Subscription for unlimited access to books on Amazon.,2022-03-04,Inactive,$83.13
+27,S0165,Skillshare - Online learning community with classes on creative and entrepreneurial skills.,2014-02-05,Cancelled,$52.85
+36,S0166,Udemy - Online courses on various topics.,2019-03-14,Inactive,$53.96
+2,S0167,Microsoft Office 365 - Subscription for office productivity tools.,2012-07-12,Active,$29.96
+14,S0168,"Scribd - Subscription for books, audiobooks, and documents.",2010-05-13,Pending,$57.44
+17,S0169,"Disney+ - Streaming service for Disney, Pixar, Marvel, Star Wars, and National Geographic content.",2019-02-24,Active,$67.28
+18,S0170,ComiXology Unlimited - Digital comic book subscription.,2013-08-04,Active,$62.27
+30,S0171,Skillshare - Online learning community with classes on creative and entrepreneurial skills.,2013-11-15,Active,$69.39
+31,S0172,Netflix - Streaming service for movies and TV shows.,2016-12-23,Inactive,$40.99
+6,S0173,Calm - Meditation and sleep app.,2016-03-07,Active,$81.41
+22,S0174,The Washington Post - Digital subscription for news articles.,2018-11-09,Active,$84.12
+19,S0175,Netflix - Streaming service for movies and TV shows.,2020-02-03,Inactive,$30.61
+4,S0176,Dropbox - Cloud storage service.,2016-08-09,Inactive,$28.65
+11,S0177,MyFitnessPal - Diet and exercise tracking app.,2015-10-04,Inactive,$79.66
+39,S0178,The New York Times - Digital subscription for news articles.,2016-11-23,Active,$25.05
+33,S0179,National Geographic - Digital and print subscriptions for science and nature content.,2010-11-01,Pending,$71.21
+4,S0180,Microsoft Office 365 - Subscription for office productivity tools.,2018-12-20,Active,$68.15
+26,S0181,Evernote - Note-taking and organization app.,2011-09-05,Pending,$40.82
+33,S0182,Spotify - Music streaming service.,2011-05-28,Pending,$22.34
+17,S0183,The Washington Post - Digital subscription for news articles.,2012-03-09,Pending,$58.40
+21,S0184,ComiXology Unlimited - Digital comic book subscription.,2014-09-22,Cancelled,$86.76
+34,S0185,"Hulu - Streaming service for TV shows, movies, and live TV.",2021-04-09,Inactive,$85.06
+38,S0186,ComiXology Unlimited - Digital comic book subscription.,2010-06-16,Cancelled,$58.19
+17,S0187,National Geographic - Digital and print subscriptions for science and nature content.,2023-01-23,Pending,$80.30
+27,S0188,Noom - Weight loss and health coaching.,2023-02-09,Active,$32.19
+11,S0189,Coursera - Online courses and degrees from universities.,2022-12-06,Pending,$81.18
+34,S0190,MasterClass - Online classes taught by experts in various fields.,2013-05-28,Pending,$33.52
+33,S0191,Audible - Audiobook subscription service.,2021-10-04,Cancelled,$76.27
+13,S0192,Noom - Weight loss and health coaching.,2011-02-20,Active,$52.12
+34,S0193,Netflix - Streaming service for movies and TV shows.,2012-05-28,Active,$35.00
+28,S0194,Evernote - Note-taking and organization app.,2012-06-26,Inactive,$61.64
+37,S0195,The New York Times - Digital subscription for news articles.,2012-06-08,Inactive,$89.57
+10,S0196,New Yorker - Digital and print subscriptions for long-form journalism and fiction.,2015-06-17,Pending,$19.20
+1,S0197,TIME Magazine - Digital and print subscriptions for news and current events.,2013-11-28,Cancelled,$53.08
+16,S0198,Evernote - Note-taking and organization app.,2015-08-07,Inactive,$50.68
+32,S0199,Evernote - Note-taking and organization app.,2016-12-04,Pending,$29.61
+33,S0200,"Scribd - Subscription for books, audiobooks, and documents.",2017-02-01,Cancelled,$40.52
