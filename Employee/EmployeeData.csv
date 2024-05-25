@@ -1,0 +1,16 @@
+Employee_ID,Age,Name,Title,Is_Admin
+1,32,"""Bank Sinatra""","""Branch Manager""",TRUE
+2,31,"""Bank Langella""","""Assistant Branch Manager""",TRUE
+3,54,"""Anne Bank""","""Loan Officer""",FALSE
+4,21,"""Bank and File""","""Teller""",FALSE
+5,21,"""Draw a Bank""","""Teller""",FALSE
+6,34,"""Point-Bank""","""Teller""",FALSE
+7,65,"""Walk the Bank""","""Teller""",FALSE
+8,77,"""Bank Zappa""","""Teller""",FALSE
+9,65,"""Bank Ocean""","""Personal Banker""",FALSE
+10,54,"""Bank Ocean""","""Personal Banker""",FALSE
+11,33,"""Bank Sinatra""","""Personal Banker""",FALSE
+12,36,"""Purple Bank""","""Customer Service Representative""",FALSE
+13,37,"""Bank You""","""Financial Advisor""",FALSE
+14,49,"""Swiss Bank""","""Financial Advisor""",FALSE
+15,50,"""Military Bank""","""Financial Advisor""",FALSE
