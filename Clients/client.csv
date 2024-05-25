@@ -1,4 +1,4 @@
-﻿Client_ID,AccountNumber,ClientName,CheckingBalance,SavingBalance,CreditCardType,CreditScore
+﻿Client_ID,AccountNumber,ClientName,CheckingBalance,SavingBalance,AccountType,CreditScore
 1,1000000001,Customer 1,$5100.00,$10100.00,Unleaded,431
 2,1000000002,Customer 2,$5200.00,$10200.00,Premium,839
 3,1000000003,Customer 3,$5300.00,$10300.00,None,0
