@@ -1,2 +1,2 @@
-Location,Bank_Num,Num_Clients,Num_Employees
-Victoria,20240519,,
+Branch_Num,Location,Num_Employees,Num_Clients
+20240519,Victoria,15,100
