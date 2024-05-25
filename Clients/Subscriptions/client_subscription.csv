@@ -1,4 +1,4 @@
-﻿CustomerID,SubscriptionID,ServiceType,SubscriptionDate,SubscriptionStatus,MonthlyFee
+﻿ClientID,SubscriptionID,ServiceType,SubscriptionDate,SubscriptionStatus,MonthlyFee
 8,S0001,Grammarly - Writing assistant tool.,2012-10-08,Active,$66.39
 7,S0002,MyFitnessPal - Diet and exercise tracking app.,2021-06-24,Cancelled,$77.59
 26,S0003,Microsoft Office 365 - Subscription for office productivity tools.,2020-05-24,Pending,$74.86
