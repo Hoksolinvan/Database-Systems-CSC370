@@ -1,12 +1,19 @@
+USE bank_database;
+
 DROP TABLE IF EXISTS `Employee`;
 
 CREATE TABLE `Employee` (
-	`Employee_ID` int
-	,`Name` varchar(64)
-	, `Age` int
-	,`Title` enum('Branch Manager', 'Assistant Branch Manager', 'Teller', 'Personal Banker', 'Loan Officer', 'Customer Service Representative', 'Financial Advisor')
+	 `Employee_ID` int
+     ,`Age` int
+     ,`Name` varchar(64)
+     ,`Position` enum('Branch Manager', 'Assistant Branch Manager', 'Teller', 'Personal Banker', 'Loan Officer', 'Customer Service Representative', 'Financial Advisor')
 );
 
-LOAD DATA LOCAL INFILE 'EmployeeData.csv'
-INTO `Employee` FIELDS TERMINATED BY ','
-FIELD ENCLOSED BY '\r\n' IGNORE 1 LINES;
+SET GLOBAL local_infile = 1;
+
+LOAD DATA LOCAL INFILE 'Employee_Data.csv'
+INTO TABLE Employee 
+FIELDS TERMINATED BY ',' 
+OPTIONALLY ENCLOSED BY '"' 
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES;
