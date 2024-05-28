@@ -3,7 +3,7 @@
 create table `Clients`(`Client_ID` int primary key, `AccountNumber` int, `ClientName` varchar(40), `Balance` varchar(40) default '$0', `AccountType` enum('None','Unleaded','Premium'), `CreditScore` int default 0);
 
 #Loading file
-load data local infile '/Users/iamvan/Desktop/CSC370/Clients/client.csv' into table `Clients` fields terminated by ',' enclosed by '"' lines terminated by '\r\n' ignore 1 lines;
+load data local infile '/Users/iamvan/Desktop/CSC370/Clients/Client_Data.csv' into table `Clients` fields terminated by ',' enclosed by '"' lines terminated by '\r\n' ignore 1 lines;
 
 
 #displaying table
