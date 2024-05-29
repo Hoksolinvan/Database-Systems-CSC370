@@ -8,8 +8,10 @@ CREATE TABLE `Bank` (
 	,`Num_Employees` int
 	,`Num_Clients` int
 );
+ALTER TABLE `Bank`
+ADD PRIMARY KEY (`Branch_Num`);
 
-# Load Data Into Table
+# Load Data Into Table (Might need to change path)
 SET GLOBAL local_infile = 1;
 LOAD DATA LOCAL INFILE 'C:\\Users\\adamz\\OneDrive\\Documents\\UVic\\CSC 370\\Database Project\\Bank\\Bank_Data.csv'
 INTO TABLE Bank 
