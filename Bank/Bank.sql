@@ -22,3 +22,5 @@ IGNORE 1 LINES;
 
 # Queries
 SELECT * FROM `Bank`;
+
+# Update Num_Employee and Num_Client (TODO Sprint 2)
