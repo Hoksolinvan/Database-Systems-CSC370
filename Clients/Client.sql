@@ -1,7 +1,7 @@
 #Table Creation
 USE bank_database;
 DROP TABLE IF EXISTS `Clients`;
-create table `Clients`(`Client_ID` int primary key, `AccountNumber` int, `ClientName` varchar(40), `Balance` varchar(40) default '$0', `AccountType` enum('None','Unleaded','Premium'), `CreditScore` int default 0);
+create table `Client`(`client_id` int primary key, `account_number` int, `client_name` varchar(40), `balance` varchar(40) default '$0', `account_type` enum('None','Unleaded','Premium'), `credit_score` int default 0);
 
 #Loading file
 SET GLOBAL local_infile = 1;

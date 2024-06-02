@@ -1,5 +1,7 @@
+-- Test scripts at: https://sqliteonline.com/ (MariaDB)
 
-#Table Initialization
+
+-- Table Initialization
 DROP TABLE IF EXISTS `Subscription`;
 CREATE TABLE `Subscription`(
     `subscription_id` INT PRIMARY KEY,
@@ -13,9 +15,10 @@ CREATE TABLE `Subscription`(
 );
 
 
-
--- Inserting mock values into the Clients table
-# INSERT INTO `Clients` (`Client_ID`, `AccountNumber`, `ClientName`, `Balance`, `AccountType`, `CreditScore`)
+-- TODO: delete this in sprint 2; useful helper to test the joins in this script
+-- Inserting mock values into the Client table
+# create table `Client`(`client_id` int primary key, `account_number` int, `client_name` varchar(40), `balance` varchar(40) default '$0', `account_type` enum('None','Unleaded','Premium'), `credit_score` int default 0);
+# INSERT INTO `Client` (`client_id`, `account_number`, `client_name`, `balance`, `account_type`, `credit_score`)
 # VALUES
 # (1, 123456, 'John Doe', '$1000', 'Unleaded', 750),
 # (2, 234567, 'Jane Smith', '$500', 'Premium', 680),
@@ -48,7 +51,9 @@ VALUES
 (20, 'E-book Subscription', '2023-08-15', '2024-08-14', 'pending', 12.00, 5);
 
 
-# TODO: correct this when we sort out a data load and store mechanism
+# TODO: For sprint 2, let's sort out a common data load and store mechanism.
+#  It would be nice to develop a platform agnostic mechanism of having the group write MySQL sql code,
+#  and work in the same 'sandbox'
 # load data local infile '../Subscription/client_subscription.csv' into table `Subscriptions` fields terminated by ',' enclosed by '"' lines terminated by '\r\n' ignore 1 lines;
 
 # fetch first 5 table rows
@@ -66,10 +71,36 @@ LIMIT 5;
 SELECT * FROM `Subscription`
 WHERE subscription_status='active' AND monthly_fee > 10.00;
 
-# display any pending subscriptions, initiated before the current date
+# display any pending subscriptions, initiated a month before the current date
 SELECT * FROM `Subscription`
-WHERE subscription_status='active' AND subscription_init_date < CURDATE();
+WHERE subscription_status='pending' AND subscription_init_date = DATE_SUB(CURDATE(), INTERVAL 1 MONTH);
 
 # display any subscriptions, which have been cancelled within the last year year
 SELECT * FROM `Subscription`
-WHERE subscription_status = 'cancelled' AND subscription_end_date >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR)
+WHERE subscription_status = 'cancelled' AND subscription_end_date >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR);
+
+-- JOINS
+# display subscription names, and subscription activity (start or end) for the client 'John Doe'
+SELECT
+    c.client_name,
+    s.service_name, s.subscription_status,
+    s.subscription_init_date AS activity_start_date,
+    s.subscription_end_date AS activity_end_date
+FROM `Subscription` s JOIN `Client` c
+    ON s.client_id = c.client_id
+WHERE c.client_name = 'John Doe';
+
+# display client names, account_type, balance, and credit_score
+# ordered by (greatest to smallest) number of active subscriptions
+# Note: return all client names
+SELECT
+    c.client_name,
+    c.account_type,
+    c.balance,
+    c.credit_score,
+    COUNT(s.subscription_id) AS active_subscription_count
+FROM `Subscription` s JOIN `Client` c
+    -- subtle and important; don't filter out clients w/o active subscriptions
+    ON s.client_id = c.client_id AND s.subscription_status = 'active'
+GROUP BY c.client_id
+ORDER BY active_subscription_count DESC;
