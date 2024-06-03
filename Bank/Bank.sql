@@ -1,26 +1,27 @@
 # Adam Zheng
 
 # Create Table
-DROP TABLE IF EXISTS `Bank`;
-CREATE TABLE `Bank` (
-	`Branch_Num` int
-	,`Location` varchar(64)
-	,`Num_Employees` int
-	,`Num_Clients` int
+drop table if exists `Bank`;
+create table `Bank` (
+	`branch_num` int
+	,`location` varchar(64)
+	,`num_employees` int
+	,`num_clients` int
 );
-ALTER TABLE `Bank`
-ADD PRIMARY KEY (`Branch_Num`);
+alter table `Bank`
+add primary key (`branch_num`);
 
 # Load Data Into Table (Might need to change path)
-SET GLOBAL local_infile = 1;
-LOAD DATA LOCAL INFILE 'C:\\Users\\adamz\\OneDrive\\Documents\\UVic\\CSC 370\\Database Project\\Bank\\Bank_Data.csv'
-INTO TABLE Bank 
-FIELDS TERMINATED BY ',' 
-OPTIONALLY ENCLOSED BY '"' 
-LINES TERMINATED BY '\r\n'
-IGNORE 1 LINES;
+set global local_infile = 1;
+load data local INFILE 'C:\\Users\\adamz\\OneDrive\\Documents\\UVic\\CSC 370\\Database Project\\Bank\\Bank_Data.csv'
+into table `Bank` 
+fields terminated by ',' 
+optional enclosed by '"' 
+lines terminated by '\r\n'
+ignore 1 lines;
 
 # Queries
-SELECT * FROM `Bank`;
+select * from `Bank`;
 
-# Update Num_Employee and Num_Client (TODO Sprint 2)
+# Update num_employee and num_client (TODO Sprint 2)
+# add a time hired and fired table that is join of Bank and Employee
