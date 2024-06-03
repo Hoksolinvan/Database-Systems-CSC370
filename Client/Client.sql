@@ -1,6 +1,8 @@
 #Table Creation
 USE bank_database;
 DROP TABLE IF EXISTS `Client`;
+DROP TABLE IF EXISTS `Clientbalance`;
+DROP TABLE IF EXISTS `client_account_type`;
 create table `Client`(`client_id` int primary key, `account_number` int, `client_name` varchar(40), `balance` varchar(40) default '$0', `account_type` enum('None','Unleaded','Premium'), `credit_score` int default 0);
 
 #Loading file
@@ -25,18 +27,16 @@ select `account_number`,`balance` from `Client` where `client_name`='Customer 1'
 update `Client`
 set client_name='poopy'
 where client_id='1';
-
 select * from `Client` where `client_id`=1;
 
 
+#Clients want to see their balance and their account types juxtaposed but for some reason they also want two client_name columns because they have short-term memories
 create table `Clientbalance`(`client_name` varchar(40), `balance` varchar(40) default '$0');
 load data local infile '/Users/iamvan/Desktop/CSC370/Client/Client_Data.csv' into table `Clientbalance` fields terminated by ',' enclosed by '"' lines terminated by '\r\n' ignore 1 lines (@dummy1, @dummy2, client_name,balance, @dummy3, @dummy4);
-
 select * from `Clientbalance`;
 
 create table `client_account_type`(`client_name` varchar(40), `account_type` enum('None','Unleaded','Premium'));
 load data local infile '/Users/iamvan/Desktop/CSC370/Client/Client_Data.csv' into table `client_account_type` fields terminated by ',' enclosed by '"' lines terminated by '\r\n' ignore 1 lines (@dummy1, @dummy2, client_name,@dummy3, account_type, @dummy4);
-
 select * from `client_account_type`;
 
 select *
