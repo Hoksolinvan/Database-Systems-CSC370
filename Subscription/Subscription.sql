@@ -1,5 +1,7 @@
 -- Test scripts at: https://sqliteonline.com/ (MariaDB)
 
+-- CREATE DATABASE bank_database;
+USE bank_database;
 
 -- Table Initialization
 DROP TABLE IF EXISTS `Subscription`;
@@ -11,7 +13,7 @@ CREATE TABLE `Subscription`(
     `subscription_status` enum('active', 'inactive', 'cancelled', 'pending'),
     `monthly_fee` DECIMAL(15, 2) DEFAULT 0.00,
     `client_id` INT,
-    FOREIGN KEY (client_id) REFERENCES Client(Client_ID)
+    FOREIGN KEY (client_id) REFERENCES Client(client_ID)
 );
 
 
