@@ -1,8 +1,8 @@
 # Adam Zheng
 
 # Create Table
-USE bank_database;
-DROP TABLE IF EXISTS `Employee`;
+use bank_database;
+drop table if exists `Employee`;
 CREATE TABLE `Employee` (
 	`Employee_ID` int
 	,`Age` int
@@ -41,4 +41,6 @@ SELECT * FROM `Employee` WHERE `Employee_ID` = 16;
 SELECT `Title`, `Is_Admin`, COUNT(*) AS `Num_Employees_Holding_Title`
 FROM `Employee`
 GROUP BY `Title`, `Is_Admin`;
+
+
 
