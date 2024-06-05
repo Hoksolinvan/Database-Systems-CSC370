@@ -16,7 +16,7 @@ set global local_infile = 1;
 load data local INFILE 'C:\\Users\\adamz\\OneDrive\\Documents\\UVic\\CSC 370\\Database Project\\Bank\\Bank_Data.csv'
 into table `Bank` 
 fields terminated by ',' 
-optional enclosed by '"' 
+optionally enclosed by '"' 
 lines terminated by '\r\n'
 ignore 1 lines;
 
