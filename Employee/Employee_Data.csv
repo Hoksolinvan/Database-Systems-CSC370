@@ -1,16 +1,16 @@
-Employee_ID,Age,Name,Title,Is_Admin
-1,32,Bank Sinatra,Branch Manager,1
-2,31,Bank Langella,Assistant Branch Manager,1
-3,54,Anne Bank,Loan Officer,0
-4,21,Bank and File,Teller,0
-5,21,Draw a Bank,Teller,0
-6,34,Point-Bank,Teller,0
-7,65,Walk the Bank,Teller,0
-8,77,Bank Zappa,Teller,0
-9,65,Bank Ocean,Personal Banker,0
-10,54,Bank Ocean,Personal Banker,0
-11,33,Bank Sinatra,Personal Banker,0
-12,36,Purple Bank,Customer Service Representative,0
-13,37,Bank You,Financial Advisor,0
-14,49,Swiss Bank,Financial Advisor,0
-15,50,Military Bank,Financial Advisor,0
+employee_id,age,name,title,is_admin,branch_num,hire_date
+1,32,"""Bank Sinatra""",Branch Manager',1,20240601,"June 5, 2000"
+2,31,"""Bank Langella""",Assistant Branch Manager,1,20240601,"June 6, 2000"
+3,54,"""Anne Bank""",Loan Officer,0,20240601,"February 12, 2010"
+4,21,"""Bank and File""",Teller,0,20240601,"December 15, 2005"
+5,21,"""Draw a Bank""",Teller,0,20240601,"January 1, 2002"
+6,34,"""Point-Bank""",Teller,0,20240601,"October 11, 2013"
+7,65,"""Walk the Bank""",Teller,0,20240601,"June 24, 2015"
+8,77,"""Bank Zappa""",Teller,0,20240601,"March 30, 2009"
+9,65,"""Bank Ocean""",Personal Banker,0,20240601,"February 20, 2007"
+10,54,"""Bank Ocean""",Personal Banker,0,20240601,"June 3, 2002"
+11,33,"""Bank Sinatra""",Personal Banker,0,20240601,"September 21, 2010"
+12,36,"""Purple Bank""",Customer Service Representative,0,20240601,"November 11, 2011"
+13,37,"""Bank You""",Financial Advisor,0,20240601,"May 28, 2004"
+14,49,"""Swiss Bank""",Financial Advisor,0,20240601,"March 23, 2013"
+15,50,"""Military Bank""",Financial Advisor,0,20240601,"July 31, 2005"
