@@ -8,11 +8,11 @@ create table `Employee` (
 	,`age` int
 	,`name` varchar(64)
 	,`title` enum('Branch Manager', 'Assistant Branch Manager', 'Teller', 'Personal Banker', 'Loan Officer', 'Customer Service Representative', 'Financial Advisor')
-	,`is_admin` bool
     ,`branch_num` int
     ,`hire_date` date
     ,primary key (`employee_id`)
     ,foreign key (`branch_num`) references `Bank`(`branch_num`)
+    ,foreign key (`title`) references `Position`(`title`)
 );
 
 # Load Data Into Table (Might need to change path)
@@ -29,8 +29,8 @@ ignore 1 lines;
 select * from `Employee`;
 
 # Hire new employee
-insert into `Employee` (`employee_id`, `age`, `name`, `title`, `is_admin`, `branch_num`, `hire_date`)
-values (16, 38, 'Sam Bankman-fried', 'Teller', 0, 1005151, current_date);
+insert into `Employee` (`employee_id`, `age`, `name`, `title`, `branch_num`, `hire_date`)
+values (16, 38, 'Sam Bankman-fried', 'Teller', 1005151, current_date);
 select * from `Employee`;
 
 # Change employee's title
@@ -49,7 +49,7 @@ select `name`, `location`
 from `Employee` join `Bank` on `Employee`.`branch_num` = `Bank`.`branch_num`;
 
 # Display possible titles, is_admin, and how many currently hold that title
-select `title`, `is_admin`, count(*) as `num_employees_holding_title`
-from `Employee`
-group by `title`, `is_admin`;
+select `Employee`.`title`, `clearance_level`, count(*) as `num_employees_holding_title`
+from `Employee` join `Position` on `Employee`.`title` = `Position`.`title`
+group by `Employee`.`title`, `clearance_level`;
 
