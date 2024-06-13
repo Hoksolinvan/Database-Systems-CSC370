@@ -88,7 +88,7 @@ load data local infile '/Users/iamvan/Desktop/CSC370/Client/Client_Data.csv' int
 
 #Adding additional attributes to Subscription and Client to increase complexity of tables
 alter table `Subscription`add column `payment_method` varchar(30), add column `discount_applied` boolean;
-alter table `Client` add column `employment_status` enum('employed','unemployed','Other') default 'Other', add column `Married` boolean default 'N/A';
+alter table `Client` add column `employment_status` enum('employed','unemployed','Other') default 'Other', add column `Married` boolean default 0;
 
 #Creating temporary relation to aid in adding the new attributes to `Subscription`
 create table temporary_relation(`subscription_id` int primary key, `payment_method` varchar(30),`discount_applied` boolean);
@@ -116,7 +116,7 @@ values (1, 'Credit card',true),
 (20, 'Cash',true);
 
 
-create table `temporary_relation2`(`client_id` int primary key, `employment_status` enum('employed','unemployed','Other') default 'Other', `Married` boolean default 'N/A');
+create table `temporary_relation2`(`client_id` int primary key, `employment_status` enum('employed','unemployed','Other') default 'Other', `Married` boolean default 0);
 insert into `temporary_relation2` (`client_id`, `employment_status`, `Married`)
 values 
 (3, 'unemployed', 0),
@@ -153,7 +153,6 @@ c.`Married`=temp.`Married`;
 
 SET SQL_SAFE_UPDATES = 1;
 ############################
-
 
 
 
