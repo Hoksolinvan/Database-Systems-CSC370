@@ -8,7 +8,7 @@ create table `Employee` (
 	,`age` int
 	,`name` varchar(64)
 	,`title` enum('Branch Manager', 'Assistant Branch Manager', 'Teller', 'Personal Banker', 'Loan Officer', 'Customer Service Representative', 'Financial Advisor')
-    ,`branch_num` int
+	,`branch_num` int
     ,`hire_date` date
     ,primary key (`employee_id`)
     ,foreign key (`branch_num`) references `Bank`(`branch_num`)
@@ -30,14 +30,14 @@ select * from `Employee`;
 
 # Hire new employee
 insert into `Employee` (`employee_id`, `age`, `name`, `title`, `branch_num`, `hire_date`)
-values (16, 38, 'Sam Bankman-fried', 'Teller', 1005151, current_date);
+values (80, 38, 'Sam Bankman-fried', 'Teller', 1005151, current_date);
 select * from `Employee`;
 
 # Change employee's title
 update `Employee` 
 set `title` = 'Financial Advisor'
-where `employee_id` = 16;
-select * from `Employee` where `employee_id` = 16;
+where `employee_id` = 80;
+select * from `Employee` where `employee_id` = 80;
 
 # Display name, employee_id, by hire order (earliest first)
 select `name`, `employee_id`, `hire_date`
@@ -48,8 +48,19 @@ order by `hire_date`;
 select `name`, `location`
 from `Employee` join `Bank` on `Employee`.`branch_num` = `Bank`.`branch_num`;
 
-# Display possible titles, is_admin, and how many currently hold that title
+# Display possible titles, clearance_level, and how many currently hold that title
 select `Employee`.`title`, `clearance_level`, count(*) as `num_employees_holding_title`
 from `Employee` join `Position` on `Employee`.`title` = `Position`.`title`
-group by `Employee`.`title`, `clearance_level`;
+group by `Position`.`title`, `clearance_level`;
 
+# Display list of titles with atleast 4 employees holding said title
+select `Employee`.`title`, count(`Employee`.`employee_id`) as `num_employees_holding_title`
+from `Employee` 
+group by `Employee`.`title`
+having count(`Employee`.`employee_id`) > 3;
+
+# Display list of employees with clearance_level greater than 2 that were hired before 2017-09-01 from youngest to oldest
+select `Employee`.`age`,`Employee`.`name`, `Employee`.`hire_date`, `Position`.`clearance_level`
+from `Employee`  join `Position` on `Employee`.`title` = `Position`.`title`
+where `Position`.`clearance_level` > 2 and `Employee`.`hire_date` < '2017-09-01'
+order by `Employee`.`age` asc;
