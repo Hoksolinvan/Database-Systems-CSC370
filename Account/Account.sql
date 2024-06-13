@@ -5,22 +5,24 @@ CREATE TABLE `Account` (
     `account_num` INT,
     `balance` VARCHAR(30),
     `account_type` VARCHAR(30),
+    # Make sure you run the code in Client.sql to create that table first so you don't get f-key integrity error
+    foreign key(client_id) references `Client`.`client_id`,
     primary key(account_num)
 );
 
 #SET GLOBAL local_infile = 1;
 #load data local infile 'Account.csv' into table `Account` fields terminated by ',' enclosed by '"' lines terminated by '\r\n' ignore 1 lines;
 
-INSERT INTO `Account` VALUES(1000000000, '$5000.00', 'None');
-INSERT INTO `Account` VALUES(1000000001, '$5000.00', 'None');
-INSERT INTO `Account` VALUES(1000000002, '$2000.00', 'Unleaded');
-INSERT INTO `Account` VALUES(1000000003, '$1000.00', 'None');
-INSERT INTO `Account` VALUES(1000000004, '$2000.00', 'Unleaded');
-INSERT INTO `Account` VALUES(1000000005, '$50000.00', 'None');
-INSERT INTO `Account` VALUES(1000000006, '$3000.00', 'Premium');
-INSERT INTO `Account` VALUES(1000000007, '$60000.00', 'None');
-INSERT INTO `Account` VALUES(1000000008, '$4000.00', 'None');
-INSERT INTO `Account` VALUES(1000000009, '$2000.00', 'None');
+INSERT INTO `Account` VALUES(1000000000, '$5000.00', 'None', 1);
+INSERT INTO `Account` VALUES(1000000001, '$5000.00', 'None', 3);
+INSERT INTO `Account` VALUES(1000000002, '$2000.00', 'Unleaded', 3);
+INSERT INTO `Account` VALUES(1000000003, '$1000.00', 'None', 32);
+INSERT INTO `Account` VALUES(1000000004, '$2000.00', 'Unleaded', 21);
+INSERT INTO `Account` VALUES(1000000005, '$50000.00', 'None', 15);
+INSERT INTO `Account` VALUES(1000000006, '$3000.00', 'Premium', 10);
+INSERT INTO `Account` VALUES(1000000007, '$60000.00', 'None', 5);
+INSERT INTO `Account` VALUES(1000000008, '$4000.00', 'None', 6);
+INSERT INTO `Account` VALUES(1000000009, '$2000.00', 'None', 8);
 
 SELECT * from Account;
 SELECT ' ';
