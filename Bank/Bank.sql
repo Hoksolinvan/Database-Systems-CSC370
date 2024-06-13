@@ -6,12 +6,11 @@ drop table if exists `Bank`;
 create table `Bank` (
 	`branch_num` int
 	,`location` varchar(64)
-	,`num_employee` int
-	,`num_client` int
+	,`num_employees` int
+	,`num_clients` int
 );
 alter table `Bank`
 add primary key (`branch_num`);
-
 
 
 # Load Data Into Table (Might need to change path)
@@ -27,25 +26,22 @@ ignore 1 lines;
 # Queries
 select * from `Bank`;
 
-# Update num_employee and num_client with subqueries 
+# Update num_employee with subquery 
 #(will need to comment out all the create table and load data lines before uncommenting and running this)
 /*
 set SQL_SAFE_UPDATES = 0;
-
 update `Bank` 
-set `num_employee` = (
+set `num_employees` = (
 	select count(*)
     from `Employee`
     where `branch_num` = 1005151
     );
-set SQL_SAFE_UPDATES = 1;
-
 update `Bank` 
-set `num_client` = (
+set `num_employees` = (
 	select count(*)
-    from `Client`
+    from `Employee`
+    where `branch_num` = 2117272
     );
-
 set SQL_SAFE_UPDATES = 1;
 select * from `Bank`;
 */
