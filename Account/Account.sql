@@ -5,6 +5,7 @@ CREATE TABLE `Account` (
     `account_num` INT,
     `balance` VARCHAR(30),
     `account_type` VARCHAR(30),
+    `client_id` int,    
     # Make sure you run the code in Client.sql to create that table first so you don't get f-key integrity error
     foreign key(client_id) references `Client`.`client_id`,
     primary key(account_num)
