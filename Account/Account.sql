@@ -7,7 +7,7 @@ CREATE TABLE `Account` (
     `account_type` VARCHAR(30),
     `client_id` int,    
     # Make sure you run the code in Client.sql to create that table first so you don't get f-key integrity error
-    foreign key(client_id) references `Client`.`client_id`,
+    foreign key(`client_id`) references `Client`(`client_id`),
     primary key(account_num)
 );
 
@@ -24,6 +24,15 @@ INSERT INTO `Account` VALUES(1000000006, '$3000.00', 'Premium', 10);
 INSERT INTO `Account` VALUES(1000000007, '$60000.00', 'None', 5);
 INSERT INTO `Account` VALUES(1000000008, '$4000.00', 'None', 6);
 INSERT INTO `Account` VALUES(1000000009, '$2000.00', 'None', 8);
+INSERT INTO `Account` VALUES(1000000010,'$3000.00','None',3);
+INSERT INTO `Account` VALUES(1000000011,'$4000.00','None',1);
+INSERT INTO `Account` VALUES(1000000012, '$5000.00','None',8);
+INSERT INTO `Account` VALUES(1000000013, '$25000.00','None',15);
+INSERT INTO `Account` VALUES(1000000014, '$14000.00','None',6);
+INSERT INTO `Account` VALUES(1000000015, '$5000.00','None',2);
+INSERT INTO `Account` VALUES(1000000016, '$25000.00','None',4);
+INSERT INTO `Account` VALUES(1000000017, '$14000.00','None',5);
+INSERT INTO `Account` VALUES(1000000018, '$10000.00','None',4);
 
 SELECT * from Account;
 SELECT ' ';

@@ -52,6 +52,13 @@ VALUES
 (19, 'Cloud Storage', '2023-07-15', '2024-07-14', 'active', 5.00, 4),
 (20, 'E-book Subscription', '2023-08-15', '2024-08-14', 'pending', 12.00, 5);
 
+INSERT INTO `Subscription` (`subscription_id`, `service_name`, `subscription_init_date`, `subscription_end_date`, `subscription_status`, `monthly_fee`, `client_id`)
+VALUES
+(21, 'Cloud Storage', '2023-09-21','2024-08-14','active',14.00,8),
+(22,'Fitness App','2023-01-01','2024-12-31','pending',21.00,15),
+(23,'Language Learning', '2023-11-01','2024-10-31','cancelled',6.99,21),
+(24,'E-book Subscription','2023-09-01','2024-09-01','active',7.10,32),
+(25,'Online Courses','2023-02-12','2024-08,30','pending',8.00,10);
 
 # TODO: For sprint 2, let's sort out a common data load and store mechanism.
 #  It would be nice to develop a platform agnostic mechanism of having the group write MySQL sql code,

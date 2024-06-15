@@ -246,28 +246,32 @@ where `subscription_status` = 'active'
 group by`client_id`;
 
 
-#Bonus: Top 10 Clients with the Highest Balance Who Have Transactions in the Last Month
-select c.`client_name` as 'Client Name', a.`balance` as 'Balance'
+#Bonus: Top 10 Clients with the Highest Balance who had subscription(s) in the Last year
+
+select c.`client_name` as 'Client Name', sum(cast(replace(`a`.`balance`, '$', '') as decimal(10, 1))) as 'Balance'
 from `Client` c
 join `Account` a ON c.`client_id` = a.`client_id`
 where c.`client_id` in (
-    select distinct t.`client_id`
-    from `transactions` t
-    WHERE t.`transaction_date` BETWEEN CURDATE() - INTERVAL 1 MONTH AND CURDATE()
+    select distinct`client_id`
+    from `Subscription`
+    WHERE `subscription_init_date` BETWEEN CURDATE() - INTERVAL 1 YEAR AND CURDATE()
 )
-ORDER BY a.`balance` DESC
+group by c.`client_name`
+ORDER BY  `Balance` DESC
 LIMIT 10;
 
 
 
 #Bonus: average balance of clients who have more than one account
-select avg(`total_balance`) as 'Average Balance'
+select `client_id`,avg(`total_balance`) as 'Average Balance'
 from (
-    select `client_id`, sum(cast(replace(`balance`, '$', '') as decimal(10, 2))) as `total_balance`
+    select `client_id`, sum(cast(replace(`balance`, '$', '') as decimal(10, 1))) as `total_balance`
     from `Account`
     group by `client_id`
     having count(account_num) > 1
-) as `subquery`;
+) as `subquery`
+group by `client_id`
+;
 
 
 
