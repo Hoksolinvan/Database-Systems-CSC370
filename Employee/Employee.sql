@@ -28,9 +28,13 @@ ignore 1 lines;
 # Select entire table
 select * from `Employee`;
 
-# Hire new employee
+# Hire new employees
 insert into `Employee` (`employee_id`, `age`, `name`, `title`, `branch_num`, `hire_date`)
 values (80, 38, 'Sam Bankman-fried', 'Teller', 1005151, current_date);
+select * from `Employee`;
+
+insert into `Employee` (`employee_id`, `age`, `name`, `title`, `branch_num`, `hire_date`)
+values (81, 38, 'Sam Bank', 'Teller', 1005151, current_date);
 select * from `Employee`;
 
 # Change employee's title
@@ -64,3 +68,18 @@ select `Employee`.`age`,`Employee`.`name`, `Employee`.`hire_date`, `Position`.`c
 from `Employee`  join `Position` on `Employee`.`title` = `Position`.`title`
 where `Position`.`clearance_level` > 2 and `Employee`.`hire_date` < '2017-09-01'
 order by `Employee`.`age` asc;
+
+# Using Transactions swap the Branch Manager
+start transaction;
+set SQL_SAFE_UPDATES = 0;
+
+update `Employee` set branch_num = 1005151 where `employee_id` = 16;
+update `Employee` set hire_date = current_date where `employee_id` = 16;
+update `Employee` set branch_num = 2117272 where `employee_id` = 1;
+update `Employee` set hire_date = current_date where `employee_id` = 1;
+
+set SQL_SAFE_UPDATES = 1;
+commit;
+select * from `Employee` where `title` like 'Branch Manager'
+
+
