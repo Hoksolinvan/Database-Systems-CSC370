@@ -3,6 +3,9 @@ drop user if exists 'Purple_Bank'@'%';
 drop user if exists 'Less_Money'@'%';
 drop user if exists 'Money_Man'@'%';
 drop user if exists 'Money_Man_Three'@'%';
+drop view if exists `Client_Side_Tables`;
+drop view if exists `Less_Money_Client_Accounts`;
+drop view if exists `Employee_2117272`;
 
 # Bank Sinatra has just been hired as the Branch Manager for Branch 1005151
 # DB Admin grants them privileges to all with grant option
