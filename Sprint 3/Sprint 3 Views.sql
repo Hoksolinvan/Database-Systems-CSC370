@@ -39,6 +39,6 @@ grant select, insert on `Employee_2117272` to 'Money_Man_Three';
 # Branch 2117272 is not making any Money and will thus be terminated
 # Admin revokes all database privileges from Money Man (pretend it is cascade, idk why the keyword doesn't work here)
 # Admin is mad that Bank Sinatra also granted Money Man those privileges and forces them to also revoke from Money Man (pretend both ran line 43)
-revoke all privileges, grant option from 'Money Man';
+revoke all privileges, grant option from 'Money_Man';
 
 FLUSH PRIVILEGES;
