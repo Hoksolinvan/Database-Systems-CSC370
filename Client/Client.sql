@@ -66,10 +66,9 @@ from `client_details` join `Clientcreditscore`on `Clientcreditscore`.`client_nam
 DROP TABLE IF EXISTS `Subscription`,
 					`Account`,
 					`Client`,
-                    `temporary_relation`,
-                    `temporary_relation2`;
+                    `Temporaryrelation1`,
+                    `Temporaryrelation2`;
                     
-
                     
                   
 
@@ -88,12 +87,12 @@ load data local infile '/Users/iamvan/Desktop/CSC370/Client/Client_Data.csv' int
 
 #Adding additional attributes to Subscription and Client to increase complexity of tables
 alter table `Subscription`add column `payment_method` varchar(30), add column `discount_applied` boolean;
-alter table `Client` add column `employment_status` enum('employed','unemployed','Other') default 'Other', add column `Married` boolean default 0;
+alter table `Client` add column `employment_status` enum('employed','unemployed','Other') default 'Other', add column `married` boolean default 0;
 
 #Creating temporary relation to aid in adding the new attributes to `Subscription`
-create table temporary_relation(`subscription_id` int primary key, `payment_method` varchar(30),`discount_applied` boolean);
+create table `Temporaryrelation1`(`subscription_id` int primary key, `payment_method` varchar(30),`discount_applied` boolean);
 
-insert into `temporary_relation`
+insert into `Temporaryrelation1`
 values (1, 'Credit card',true),
 (2, 'Debit card',false),
 (3, 'Debit card',true),
@@ -116,8 +115,8 @@ values (1, 'Credit card',true),
 (20, 'Cash',true);
 
 
-create table `temporary_relation2`(`client_id` int primary key, `employment_status` enum('employed','unemployed','Other') default 'Other', `Married` boolean default 0);
-insert into `temporary_relation2` (`client_id`, `employment_status`, `Married`)
+create table `Temporaryrelation2`(`client_id` int primary key, `employment_status` enum('employed','unemployed','Other') default 'Other', `married` boolean default 0);
+insert into `Temporaryrelation2` (`client_id`, `employment_status`, `married`)
 values 
 (3, 'unemployed', 0),
 (4, 'employed', 1),
@@ -149,7 +148,7 @@ set `Subscription`.`discount_applied` = `temporary_relation`.`discount_applied`;
 
 update `Client` c join `temporary_relation2` temp on c.`client_id`=temp.`client_id`
 set c.`employment_status`=temp.`employment_status`,
-c.`Married`=temp.`Married`;
+c.`married`=temp.`married`;
 
 SET SQL_SAFE_UPDATES = 1;
 ############################
@@ -272,6 +271,95 @@ from (
 ) as `subquery`
 group by `client_id`
 ;
+
+select * from `Client`;
+select * from `Subscription`;
+select * from `Account`;
+show create table `Client`;
+show create table `Account`;
+
+#########################
+#Sprint 3
+#########################
+
+create table `Updated_Account`
+select `account_num`,convert(replace(`balance`,"$",""),double) as balance,`account_type`,`client_id`
+from `Account`;
+
+
+
+
+#account_num 1000000000 wants to transfer 2000 to account_num 1000000001
+
+#Creating stored procedure featuring Isolation level transaction further consolidating the principles of ACID transaction.
+DELIMITER $$
+create procedure TransferMoney(
+	IN transaction_amount DECIMAL(10,2),
+    IN transferer INT,
+    IN transferee INT
+)
+BEGIN
+	DECLARE current_balance DECIMAL(10,2);
+
+set transaction isolation level serializable;
+start transaction;
+
+select `balance` into current_balance
+from `Updated_Account`
+where `account_num`=transferer;
+
+IF current_balance >= transaction_amount then
+
+	update `Updated_Account`
+    set `balance`=`balance`-transaction_amount
+    where `account_num`=transferer;
+	
+    update `Updated_Account`
+    set `balance`=`balance`+transaction_amount
+    where `account_num`=transferee;
+    
+	commit;
+ELSE
+	rollback;
+END if;
+END $$
+Delimiter ;
+
+set SQL_safe_UPDATES=0;
+CALL TransferMoney(2000, 1000000000, 1000000001);
+set SQL_safe_UPDATES=1;
+
+select * from `Updated_Account`;
+
+
+DELIMITER //
+
+CREATE PROCEDURE UpdateClientCredit(IN client_idp INT, IN credit_increase INT)
+BEGIN
+    DECLARE current_credit_score INT;
+    START TRANSACTION;
+    UPDATE `Client` set credit_score = credit_score + credit_increase where client_id = client_idp;
+
+    select credit_score into current_credit_score from `Client` where client_id = client_idp;
+
+    IF current_credit_score > 800 THEN
+        ROLLBACK;
+    ELSE
+        COMMIT;
+    END IF;
+    
+END//
+
+DELIMITER ;
+
+set SQL_safe_UPDATES=0;
+CALL UpdateClientCredit(1, 50);
+set SQL_safe_UPDATES=1;
+
+
+
+
+
 
 
 
