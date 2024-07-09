@@ -3,6 +3,7 @@
 # Create Table
 use bank_database;
 drop table if exists `Employee`;
+drop table if exists `PartTimeEmployees`;
 create table `Employee` (
 	`employee_id` int
 	,`age` int
@@ -13,6 +14,11 @@ create table `Employee` (
     ,primary key (`employee_id`)
     ,foreign key (`branch_num`) references `Bank`(`branch_num`)
     ,foreign key (`title`) references `Position`(`title`)
+);
+create table `Part_Time_Employee` (
+	`employee_id` int
+    ,`hours_per_week` int
+    ,foreign key (`employee_id`) references `Employee`(`employee_id`)
 );
 
 # Load Data Into Table (Might need to change path)
@@ -80,6 +86,22 @@ update `Employee` set hire_date = current_date where `employee_id` = 1;
 
 set SQL_SAFE_UPDATES = 1;
 commit;
-select * from `Employee` where `title` like 'Branch Manager'
+select * from `Employee` where `title` like 'Branch Manager';
 
+# Using Transactions to move every even employee id to part time (with 20 hours)
+start transaction;
+
+insert into `Part_Time_Employee`(`employee_id`, `hours_per_week`)
+select `Employee`.`employee_id`, 20
+from `Employee`
+where `Employee`.`employee_id` % 2 = 0
+and `Employee`.`employee_id` not in (select `employee_id` from `Part_Time_Employee`);
+	
+commit;
+
+select * from `Part_Time_Employee`;
+
+# Create an Index on branch_num for more optinized queries when needing to filter by branch_num
+drop index `idx_branch_num` on `Employee`;
+create index `idx_branch_num` on `Employee`(`branch_num`);
 
