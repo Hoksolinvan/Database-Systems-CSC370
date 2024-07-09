@@ -101,7 +101,7 @@ commit;
 
 select * from `Part_Time_Employee`;
 
-# Create an Index on branch_num for more optinized queries when needing to filter by branch_num
-drop index `idx_branch_num` on `Employee`;
-create index `idx_branch_num` on `Employee`(`branch_num`);
+# Create an Index on age for more optinized queries when needing to sort or filter by age
+drop index `idx_age` on `Employee`;
+create index `idx_age` on `Employee`(`age`);
 
