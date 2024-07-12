@@ -3,7 +3,7 @@
 # Create Table
 use bank_database;
 drop table if exists `Employee`;
-drop table if exists `PartTimeEmployees`;
+drop table if exists `Part_Time_Employee`;
 create table `Employee` (
 	`employee_id` int
 	,`age` int
@@ -16,7 +16,7 @@ create table `Employee` (
     ,foreign key (`title`) references `Position`(`title`)
 );
 create table `Part_Time_Employee` (
-	`employee_id` int
+	`employee_id` int primary key
     ,`hours_per_week` int
     ,foreign key (`employee_id`) references `Employee`(`employee_id`)
 );
