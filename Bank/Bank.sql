@@ -6,8 +6,6 @@ drop table if exists `Bank`;
 create table `Bank` (
 	`branch_num` int
 	,`location` varchar(64)
-	,`num_employees` int
-	,`num_clients` int
 );
 alter table `Bank`
 add primary key (`branch_num`);
@@ -26,22 +24,6 @@ ignore 1 lines;
 # Queries
 select * from `Bank`;
 
-# Update num_employee with subquery 
-#(will need to comment out all the create table and load data lines before uncommenting and running this)
-/*
-set SQL_SAFE_UPDATES = 0;
-update `Bank` 
-set `num_employees` = (
-	select count(*)
-    from `Employee`
-    where `branch_num` = 1005151
-    );
-update `Bank` 
-set `num_employees` = (
-	select count(*)
-    from `Employee`
-    where `branch_num` = 2117272
-    );
-set SQL_SAFE_UPDATES = 1;
-select * from `Bank`;
-*/
+# Get Num Employees for each brach 
+select count(*) as `num_employee`
+from `employee`;
