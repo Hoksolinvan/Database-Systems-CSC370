@@ -246,6 +246,7 @@ create index `service_name` on Subscription(`service_name`);
 drop index `service_name` on `Subscription`;
 
 # Subclass of Client
+drop table if exists `Vip_Clients`;
 create table `Vip_Clients`(`client_id` int primary key,
 `join_year` int,
 foreign key(`client_id`) references `Client`(`client_id`));
