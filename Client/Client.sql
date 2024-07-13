@@ -282,4 +282,8 @@ insert into `Vip_Clients` values (1,2024),
 
 
 
+create index `client_name_index` on Client(`client_name`);
+
+create index `service_name` on Subscription(`service_name`);
+
 
