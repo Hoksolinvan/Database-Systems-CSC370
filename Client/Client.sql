@@ -25,7 +25,6 @@ select * from `Client` order by `client_id` desc;
 #The manager is looking for the customer with the highest credit score
 select * from `Client` order by `credit_score` desc LIMIT 1;
 
-
 #Customer1 didn't liked that his name was "Customer1" therefore he threatened to speak to our manager if we didn't change his name to his real name
 update `Client`
 set client_name='poopy'
@@ -33,7 +32,6 @@ where client_id='1';
 
 #displaying "Customer1's" details
 select * from `Client` where `client_id`=1;
-
 
 #Clients want to see their credit scores and their client id juxtaposed side-by-side, thus reducing their cognitive load on trying to remember details
 create table `Clientcreditscore`(`client_name` varchar(40), `credit_score` int default 0);
@@ -51,15 +49,6 @@ from `client_details` natural join `Clientcreditscore`;
 select *
 from `client_details` join `Clientcreditscore`on `Clientcreditscore`.`client_name` = `client_details`.`client_name`;
 
-
-
-
-
-
-
-
-
-
 #########################
 #Sprint 2
 #########################
@@ -67,15 +56,8 @@ DROP TABLE IF EXISTS `Subscription`,
 					`Account`,
 					`Client`,
                     `temporary_relation`,
-                    `temporary_relation2`;
-                    
-
-                    
-                  
-
-
+                    `temporary_relation2`;				
 #####################################################BCNF Normalization
-
 #Normalizing `Client`
 create table `Client`(`client_id` int primary key,
 `client_name` varchar(40), 
@@ -115,7 +97,6 @@ values (1, 'Credit card',true),
 (19, 'Credit card',true),
 (20, 'Cash',true);
 
-
 create table `temporary_relation2`(`client_id` int primary key, `employment_status` enum('employed','unemployed','Other') default 'Other', `Married` boolean default 0);
 insert into `temporary_relation2` (`client_id`, `employment_status`, `Married`)
 values 
@@ -146,31 +127,21 @@ set `Subscription`.`payment_method`=`temporary_relation`.`payment_method`;
 update `Subscription` join `temporary_relation` on `Subscription`.`subscription_id` = `temporary_relation`.`subscription_id`
 set `Subscription`.`discount_applied` = `temporary_relation`.`discount_applied`;
 
-
 update `Client` c join `temporary_relation2` temp on c.`client_id`=temp.`client_id`
 set c.`employment_status`=temp.`employment_status`,
 c.`Married`=temp.`Married`;
 
 SET SQL_SAFE_UPDATES = 1;
+
 ############################
-
-
-
-
-
-
-
 #Complex SQLs
-
 #We want to segregate the clients by the payment_methods
-
 select `payment_method` as `payment_method`, COUNT(*)
 from `Subscription`
 group by `payment_method` having `payment_method`='Credit card';
 
 
 #We want to find the client_id which has the most amount of subscription
-
 select `client_id`, min(`monthly_fee`)
 from `Subscription`
 group by `client_id`;
@@ -183,7 +154,6 @@ limit 1;
 select `client_id`,`monthly_fee`
 from `Subscription`
 group by `client_id`,`monthly_fee` having `monthly_fee`>=20;
-
 
 select `subscription_status`,sum(`monthly_fee`) as 'sum_of_monthly_fee'
 from `Subscription`
@@ -229,7 +199,6 @@ select `client_id` as 'client whose total monthly fees > average'
 from (select `client_id` from `Subscription` group by `client_id` having sum(`monthly_fee`)>avg(`monthly_fee`)) as `temp1`;
 
 #Problem: List services subscribed by clients who have total monthly fees greater than $100.
-
 select `service_name`
 from `Subscription`
 where `client_id` in (
@@ -245,9 +214,7 @@ from `Subscription`
 where `subscription_status` = 'active'
 group by`client_id`;
 
-
 #Bonus: Top 10 Clients with the Highest Balance who had subscription(s) in the Last year
-
 select c.`client_name` as 'Client Name', sum(cast(replace(`a`.`balance`, '$', '') as decimal(10, 1))) as 'Balance'
 from `Client` c
 join `Account` a ON c.`client_id` = a.`client_id`
@@ -260,8 +227,6 @@ group by c.`client_name`
 ORDER BY  `Balance` DESC
 LIMIT 10;
 
-
-
 #Bonus: average balance of clients who have more than one account
 select `client_id`,avg(`total_balance`) as 'Average Balance'
 from (
@@ -273,6 +238,14 @@ from (
 group by `client_id`
 ;
 
+
+# Create Indexes
+create index `client_name_index` on Client(`client_name`);
+drop index `client_name_index` on `Client`;
+create index `service_name` on Subscription(`service_name`);
+drop index `service_name` on `Subscription`;
+
+# Subclass of Client
 create table `Vip_Clients`(`client_id` int primary key,
 `join_year` int,
 foreign key(`client_id`) references `Client`(`client_id`));
@@ -280,10 +253,4 @@ foreign key(`client_id`) references `Client`(`client_id`));
 insert into `Vip_Clients` values (1,2024),
 (2,2024),(3,2020),(4,2021),(5,2023),(6,2024),(7,2020),(8,2021),(9,2022),(10,2021);
 
-
-
-create index `client_name_index` on Client(`client_name`);
-
-create index `service_name` on Subscription(`service_name`);
-
-
+select * from `Vip_Clients`;
