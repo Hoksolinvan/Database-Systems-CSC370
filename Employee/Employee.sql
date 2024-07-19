@@ -105,3 +105,30 @@ select * from `Part_Time_Employee`;
 drop index `idx_age` on `Employee`;
 create index `idx_age` on `Employee`(`age`);
 
+# Add check constraint to Employee age to make sure atleast 16
+alter table `Employee`
+add constraint `check_age` check (`age` >= 16);
+
+# Test that it won't allow bad insert or update (both should give error)
+insert into `Employee` (`employee_id`, `age`, `name`, `title`, `branch_num`, `hire_date`)
+values (100, 15, 'Not Old Enough', 'Teller', 1005151, current_date);
+
+update `Employee` 
+set `age` = 15
+where `employee_id` = 1;
+
+# Add check contraint to Part_Time_Employee hours to make sure it is less than 40 and greater than or equal to 10
+alter table `Part_Time_Employee`
+add constraint `check_hours` check (`hours_per_week` < 40 and `hours_per_week` >= 10);
+
+# Test that it won't allow bad update (should give error)
+update `Part_Time_Employee` 
+set `hours_per_week` = 9
+where `employee_id` = 2;
+
+# Drop check constraints
+alter table `Employee`
+drop constraint `check_age`;
+
+alter table `Part_Time_Employee`
+drop constraint `check_hours`;
