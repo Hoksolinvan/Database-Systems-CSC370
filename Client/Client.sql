@@ -255,3 +255,30 @@ insert into `Vip_Clients` values (1,2024),
 (2,2024),(3,2020),(4,2021),(5,2023),(6,2024),(7,2020),(8,2021),(9,2022),(10,2021);
 
 select * from `Vip_Clients`;
+
+
+#Ensure that montly fees for subscriptions are never negative
+ALTER TABLE `Subscription`
+ADD CONSTRAINT chk_monthly_fee CHECK (`monthly_fee` >= 0);
+
+
+#Ensures that credit scores of clients are between 0 and 1000
+ALTER TABLE `Client`
+ADD CONSTRAINT chk_credit_score CHECK (`credit_score` BETWEEN 0 AND 1000);
+
+DELIMITER $$
+CREATE TRIGGER update_credit_score
+BEFORE UPDATE ON `Client`
+FOR EACH ROW
+BEGIN
+  IF NEW.credit_score < 0 THEN
+    SET NEW.credit_score = 0;
+  ELSEIF NEW.credit_score > 850 THEN
+    SET NEW.credit_score = 850;
+  END IF;
+END$$
+DELIMITER ;
+
+
+select `client_id`, max(`monthly_fee`) as `highest_monthly_fee`
+from `Subscription`;
