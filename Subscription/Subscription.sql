@@ -113,3 +113,8 @@ FROM `Subscription` s JOIN `Client` c
     ON s.client_id = c.client_id AND s.subscription_status = 'active'
 GROUP BY c.client_id
 ORDER BY active_subscription_count DESC;
+
+-- Some fun checks and triggers for the subscription table
+alter table `Subscription`
+add constraint check_dates
+    check (subscription_end_date > subscription_init_date);
