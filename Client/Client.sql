@@ -273,8 +273,8 @@ FOR EACH ROW
 BEGIN
   IF NEW.credit_score < 0 THEN
     SET NEW.credit_score = 0;
-  ELSEIF NEW.credit_score > 850 THEN
-    SET NEW.credit_score = 850;
+  ELSEIF NEW.credit_score > 1000 THEN
+    SET NEW.credit_score = 1000;
   END IF;
 END$$
 DELIMITER ;
